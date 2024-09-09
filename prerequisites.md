@@ -1,37 +1,37 @@
-# Getting started with OpenCore
+# Začínáme s OpenCore
 
-Before we can jump head first into making an OpenCore based system, we need to go over a few things.
+Než se vrhneme po hlavě do tvorby systému založeného na OpenCore, musíme si projít několik věcí.
 
-## Prerequisites
+## Předpoklady
 
-1. <span style="color:red">_**[CRUCIAL]**_</span> Time and patience.
-   * Don't start working on this if you have deadlines or important work. Hackintoshes are not something you should be relying on as a work machine.
-2. <span style="color:red">_**[CRUCIAL]**_</span> **KNOW YOUR HARDWARE**
-   * Your CPU name and its generation
-   * Your GPUs
-   * Your storage devices (HDD/SSD, NVMe/AHCI/RAID/IDE configuration)
-   * Your laptop/desktop model if from an OEM
-   * Your **Ethernet chipset**
-   * Your WLAN/Bluetooth chipset
-3. <span style="color:red">_**[CRUCIAL]**_</span> **A BASIC KNOWLEDGE OF COMMAND LINES AND HOW TO USE A TERMINAL/COMMAND PROMPT**
-   * This is not just [CRUCIAL], this is the basis of this whole guide. We can't help you if you don't know how to `cd` to a directory or delete a file.
-4. <span style="color:red">_**[CRUCIAL]**_</span> A machine that is compatible as seen in the _**Compatibility**_ section.
-   * [Hardware Limitations page](macos-limits.md)
-5. <span style="color:red">_**[CRUCIAL]**_</span> A minimum of:
-   * 16GB USB if you're going to use macOS to create the USB
-   * 4GB USB if you're going to use Windows or Linux for USB creation
-6. <span style="color:red">_**[CRUCIAL]**_</span> An **Ethernet connection** (no WiFi dongles, Ethernet USB adapter may work depending on macOS support) and you must know your LAN card's model
-   * You must either have a physical Ethernet port, or a compatible macOS Ethernet dongle/adapter. In case you have a [compatible WiFi card](https://dortania.github.io/Wireless-Buyers-Guide/), you can also use that.
-     * Note the majority of WiFi cards are not supported by macOS
-   * For people who can't use ethernet but have an Android phone, you can connect your Android phone to WiFi and then tether it using USB with [HoRNDIS](https://joshuawise.com/horndis#available_versions).
-7. <span style="color:red">_**[CRUCIAL]**_</span> **Proper OS Installation:**
-   * Be it:
-     * macOS (a fairly recent one would be better)
-     * Windows (Windows 10, 1703 or newer)
-     * Linux (Clean and properly functioning, with Python 2.7 or later)
-   * For Windows or Linux users, **15GB** of free space on the drive you're working on. On Windows, your OS disk (C:) must have at least **15GB** of free space.
-   * For macOS users, **30GB** of free space on the system's drive.
-   * Most tools used in this guide will also require [Python installed](https://www.python.org/downloads/)
-8. <span style="color:red">_**[CRUCIAL]**_</span> **Latest BIOS installed**
-   * In most cases, updating your BIOS will provide the best support for macOS
-   * The exception to this are MSI 500-series AMD motherboards, read more at [Motherboard Support](macos-limits.md#motherboard-support)
+1. <span style="color:red">_**[CRUCIAL]**_</span> Čas a trpělivost.
+   * Nezačínejte na tom pracovat, pokud máte termíny odevzdání nebo důležitou práci. Hackintoshe nejsou něco, na co byste se jako pracovní stroj měli spoléhat.
+2. <span style="color:red">_**[CRUCIAL]**_</span> **ZJISTĚTE SVŮJ HARDWARE**
+   * Název vašeho procesoru a jeho generace
+   * Vaše grafické karty
+   * Vaše úložná zařízení (HDD/SSD, konfigurace NVMe/AHCI/RAID/IDE)
+   * Model vašeho notebooku/stolního počítače, pokud je od výrobce OEM
+   * Váš **ethernetový čipset**
+   * Váš WLAN/Bluetooth čipset 
+3. <span style="color:red">_**[KLÍČOVÉ]**_</span> **ZÁKLADNÍ ZNALOSTI PŘÍKAZOVÝCH ŘÁDKŮ A JAK POUŽÍVAT TERMINÁL/PŘÍKAZOVÝ ŘÁDEK**
+   * To není jen [KLÍČOVÉ], to je základ celé této příručky. Nemůžeme vám pomoci, pokud nevíte, jak udělat `cd` do adresáře nebo jak smazat soubor.
+4. <span style="color:red">_**[KLÍČOVÉ]**_</span> Stroj, který je kompatibilní, jak je vidět v části _**Kompatibilita**_.
+   * [Stránka Hardwarová omezení](macos-limits.md)
+5. <span style="color:red">_**[KLÍČOVÉ]**_</span> Minimálně:
+   * USB disk s kapacitou 16GB, pokud budete k vytvoření USB používat macOS
+   * USB disk s kapacitou 4GB, pokud budete pro vytváření USB používat Windows nebo Linux
+6. <span style="color:red">_**[KLÍČOVÉ]**_</span> **Ethernetové připojení** (žádné Wi-Fi převodníky, ethernetový USB adaptér může fungovat v závislosti na podpoře macOS) a musíte znát model své LAN karty
+   * Musíte mít buď fyzický ethernetový port, nebo kompatibilní ethernetový převodník/adaptér macOS. V případě, že máte [kompatibilní Wi-Fi kartu](https://dortania.github.io/Wireless-Buyers-Guide/), můžete ji také použít.
+     * Mějte na paměti, že většina WiFi karet není podporována systémem macOS
+   * Pro lidi, kteří nemohou používat ethernet, ale mají telefon se systémem Android, můžete svůj Android telefon připojit k síti Wi-Fi a poté jej přidělit pomocí USB s [HoRNDIS](https://joshuawise.com/horndis#available_versions).
+7. <span style="color:red">_**[KLÍČOVÉ]**_</span> **Správná instalace OS:**
+   * Musíte mít:
+     * macOS (trochu novější by byl lepší)
+     * Windows (Windows 10, 1703 nebo novější)
+     * Linux (Čistý a správně fungující s Pythonem 2.7 nebo novějším)
+   * Pro uživatele systému Windows nebo Linuxu - **15 GB** volného místa na disku, na kterém pracujete. V systému Windows musí mít váš disk s operačním systémem (C:) alespoň **15 GB** volného místa.
+   * Pro uživatele macOS **30 GB** volného místa na systémovém disku.
+   * Většina nástrojů používaných v této příručce bude také vyžadovat [nainstalovaný Python](https://www.python.org/downloads/)
+8. <span style="color:red">_**[KLÍČOVÉ]**_</span> **Nainstalovaný nejnovější BIOS**
+   * Ve většině případů nejlepší podporu pro macOS poskytne aktualizace systému BIOS
+   * Výjimkou jsou základní desky AMD řady MSI 500, více na [Podpora základních desek](macos-limits.md#motherboard-support)
