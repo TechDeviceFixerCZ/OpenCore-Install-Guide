@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /dortania-logo-clear.png
-heroText: Dortania's OpenCore Install Guide
-actionText: Getting Started→
+heroText: Průvodce instalací OpenCore od Dortania
+actionText: Začínáme→
 actionLink: prerequisites.md
 
 meta:
@@ -10,17 +10,17 @@ meta:
   content: Current supported version 0.9.1
 ---
 
-# What is OpenCore and who is this guide for
+# Co je OpenCore a pro koho je tato příručka určena
 
-OpenCore is what we refer to as a "boot loader" – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts. How this tool differs from others like Clover is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as [System Integrity Protection](https://support.apple.com/en-ca/HT204899) and [FileVault](https://support.apple.com/en-ca/HT204837). A more in-depth look can be found here: [Why OpenCore over Clover and others](why-oc.md)
+OpenCore je to, co nazýváme „bootloader“ – je to komplexní software, který používáme k přípravě našich systémů pro macOS – konkrétně vkládáním nových dat pro macOS, jako jsou SMBIOS, tabulky ACPI a kexty. Jak se tento nástroj liší od jiných, jako je Clover, je to, že byl navržen s ohledem na bezpečnost a kvalitu, což nám umožňuje používat mnoho funkcí zabezpečení, které se nacházejí na skutečných Mac počítačích, jako [Ochrana integrity systému](https://support.apple.com/en-ca/HT204899) a [FileVault](https://support.apple.com/en-ca/HT204837). Podrobnější pohled najdete zde: [Proč OpenCore před Cloverem a dalšími](why-oc.md)
 
-This guide specifically focuses on two main things:
+Tato příručka se konkrétně zaměřuje na dvě hlavní věci:
 
-* Installing macOS on an X86-based PC
-* Teaching you what makes your Hack work
+* Instalace macOS na PC na architektuře X86
+* Naučí vás, co umožní vašmu Hacku fungovat
 
-Because of this, you will be expected to read, learn and even use Google. This is not a simple one-click install setup.
+Z tohoto důvodu se od vás bude očekávat, že budete číst, učit se a dokonce používat Google. Nejedná se o jednoduché nastavení instalace jedním kliknutím.
 
-Please remember that OpenCore is still new and currently in beta. While quite stable, and arguably much more stable than Clover in pretty much every way, it is still being frequently updated, so chunks of configuration change quite often (i.e. new quirks replacing old ones).
+Pamatujte, že OpenCore je stále nové a aktuálně ve verzi beta. I když je docela stabilní a pravděpodobně mnohem stabilnější než Clover v podstatě ve všech směrech, stále se často aktualizuje, takže kusy konfigurace se poměrně často mění (tj. nové vtípky nahrazují staré).
 
-Lastly, those having issues can visit both the [r/Hackintosh subreddit](https://www.reddit.com/r/hackintosh/) and [r/Hackintosh Discord](https://discord.gg/u8V7N5C) for more help.
+A konečně, ti, kteří mají problémy, mohou navštívit [r/Hackintosh subreddit](https://www.reddit.com/r/hackintosh/) a [r/Hackintosh Discord server](https://discord.gg/u8V7N5C) pro další pomoc.
