@@ -6,8 +6,8 @@ actionText: Začínáme→
 actionLink: prerequisites.md
 
 meta:
-- name: description
-  content: Current supported version 0.9.1
+- name: popis
+  content: Aktuální podporovaná verze je 0.9.1
 ---
 
 # Co je OpenCore a pro koho je tato příručka určena
